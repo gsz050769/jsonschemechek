@@ -31,7 +31,7 @@
         "msg"
       ],
       "properties": {
-        "amsgId": { "$ref" : "file:json_ref/amsgId.json" },
+        "amsgId": { "$ref" : "file:json_ref/amsgid.json" },
         "sip_id": { "$ref" : "file:json_ref/sip_id.json" },
         "msg": {
             "$id": "#/properties/msg",
