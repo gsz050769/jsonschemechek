@@ -1,0 +1,10 @@
+{
+    "$id": "http://example.com/ref/make_call_user_interaction",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "define make call user interaction mode" ,
+    "type": "string",
+    "enum": [
+                "automatic",
+                "interactive"
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "$id": "http://example.com/ref/prio",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "priority of the message" ,
+    "type": "string",
+    "maxLength": 1,
+    "pattern": "[1-9]"
+}

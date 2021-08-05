@@ -1,0 +1,11 @@
+{
+    "$id": "http://example.com/ref/paragraph_align",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "paragraph alignment" ,
+    "type": "string",
+    "enum": [
+                "left",
+                "right",
+                "center"
+    ]
+}

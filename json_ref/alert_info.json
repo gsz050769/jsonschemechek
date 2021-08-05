@@ -1,0 +1,12 @@
+{
+    "$id": "http://example.com/ref/alert_tinfo",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "Alert pattern used to signal the message accoustically" ,
+    "type": "string",
+    "enum": [
+                "msg_melody_silent",
+                "msg_melody_low",
+                "msg_melody_mid",
+                "msg_melody_high"
+    ]
+}

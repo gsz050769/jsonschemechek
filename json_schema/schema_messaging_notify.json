@@ -1,0 +1,48 @@
+{
+    "$id": "http://example.com/messaging_notify_message",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "required": [
+        "msgId",
+        "payload"
+    ],
+  "examples": [
+    {
+      "msgId":"as_message1",
+      "payload":{            
+        "amsgId":"facility_management_5",          
+        "sip_id":"4020",
+        "msg":{
+            "chosen_option_id":"option_id_6",
+            "terminal_msg_status":"replied"
+        }
+      }
+    }  
+  ],
+  "properties": {
+    "msgId": { "$ref" : "file:json_ref/msgid.json" },
+    "payload": {
+      "$id": "#/properties/payload",
+      "type": "object",
+      "description": "Contains message set content",
+      "required": [
+        "amsgId",
+        "sip_id",
+        "msg"
+      ],
+      "properties": {
+        "amsgId": { "$ref" : "file:json_ref/amsgId.json" },
+        "sip_id": { "$ref" : "file:json_ref/sip_id.json" },
+        "msg": {
+            "$id": "#/properties/msg",
+            "type": "object",
+            "description": "Contains message data",
+            "properties": {
+                "chosen_option_id" : {"$ref": "file:json_ref/reply_option_id.json"},
+                "terminal_msg_status" : { "$ref": "file:json_ref/terminal_msg_status.json" }
+            }
+        }
+      }
+    }
+  }
+}

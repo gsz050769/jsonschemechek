@@ -1,0 +1,10 @@
+{
+    "$id": "http://example.com/ref/local_ignore",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "local ignore y/n, user is allowed to ignore a message, ignored => terminal_msg_status=\"local-ignore\"" ,
+    "type": "string",
+    "enum": [
+                "no",
+                "yes"
+    ]
+}

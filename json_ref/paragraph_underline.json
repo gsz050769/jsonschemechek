@@ -1,0 +1,10 @@
+{
+    "$id": "http://example.com/ref/paragraph_underline",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "paragraph underlined yes/no" ,
+    "type": "string",
+    "enum": [
+                "yes",
+                "no"
+    ]
+}

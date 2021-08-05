@@ -1,0 +1,7 @@
+{
+    "$id": "http://example.com/ref/reply_text",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "text for reply option" ,
+    "type": "string",
+    "maxLength": 16
+}

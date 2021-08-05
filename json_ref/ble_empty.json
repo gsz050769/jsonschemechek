@@ -1,0 +1,7 @@
+{
+    "$id": "http://example.com/ref/ble_empty",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "Empty ble object" ,
+    "type": "object",
+    "required": []
+}

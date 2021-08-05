@@ -1,0 +1,103 @@
+{
+    "$id": "http://example.com/location_ble_response",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "required": [
+        "msgId",
+        "payload"
+    ],
+    "examples": [
+        {
+            "msgId": "pos_2",
+            "payload": {
+                "ipui": "02ea651bab",
+                "sip_id": "4020",
+                "dm_id": "dm1",
+                "dm_handover": "no",
+                "ble": {
+                    "bs_mac":"7c2f80c1f40a",
+                    "bs_fpn" :"ab",
+                    "bs_rpn":"02",
+                    "bs_name":"LocalBS",
+                    "timestamp":"1583953032",
+                    "beacons": [
+                        {"mac":"f77454d49858","mac_random":"f77454d49858","rssi":"60","ble_advert_type":"ff","ble_advert_data":["87","00","09","c7"]},
+                        {"mac":"f77454d23454","mac_random":"f77454d23454","rssi":"40","ble_advert_type":"ff","ble_advert_data":["81","01","05","c7"]}
+                    ]
+                },
+                "dps": {} 
+            }
+        }
+    ],
+    "properties": {
+        "msgId": { "$ref" : "file:json_ref/msgid.json"
+        },
+        "payload": {
+            "$id": "#/properties/payload",
+            "type": "object",
+            "description": "Contains response message data",
+            "required": [
+                "ipui",
+                "sip_id",
+                "dm_id",
+                "dm_handover",
+                "dps",
+                "ble"
+            ],
+            "properties": {
+                "ipui": { "$ref" : "file:json_ref/ipui.json" },
+                "sip_id": { "$ref" : "file:json_ref/sip_id.json" },
+                "dm_id": { "$ref" : "file:json_ref/dm_id.json" },
+                "dm_handover": {"$ref" : "file:json_ref/dm_handover.json"},
+                "ble": {
+                    "$id": "#/properties/payload/properties/ble",
+                    "type": "object",
+                    "description": "BLE content response message",
+                    "required": [
+                        "bs_mac",
+                        "bs_fpn",
+                        "bs_rpn",
+                        "bs_name",
+                        "timestamp",
+                        "beacons"
+                    ],
+                    "properties": {
+                        "bs_mac": { "$ref" : "file:json_ref/mac.json" },
+                        "bs_fpn": { "$ref" : "file:json_ref/fpn.json" },
+                        "bs_rpn": { "$ref" : "file:json_ref/rpn.json" },
+                        "bs_name": { "$ref" : "file:json_ref/bs_name.json" },
+                        "timestamp": { "$ref" : "file:json_ref/timestamp.json" },
+                        "beacons" :{
+                            "$id": "#/properties/payload/properties/ble/beacons",
+                            "type": "array",
+                            "description": "list of BLE beacons info",
+                            "items" : [
+                                {
+                                    "type" : "object",
+                                    "properties" : {
+                                        "mac": { "$ref" : "file:json_ref/mac.json" },
+                                        "mac_random": { "$ref" : "file:json_ref/mac.json" },
+                                        "rssi" : { "$ref" : "file:json_ref/rssi.json" },
+                                        "advertising":{
+                                            "$id": "#/properties/payload/properties/ble/advertising",
+                                            "type": "array",
+                                            "description": "BLE advertising data",
+                                            "items" : {
+                                                    "type" : "object",
+                                                    "properties" : {
+                                                        "ble_advert_type": { "$ref" : "file:json_ref/ble_advert_type.json" },
+                                                        "ble_advert_data": { "$ref" : "file:json_ref/ble_advert_data.json" }
+                                                    }
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                },
+                "dps":  {"$ref": "file:json_ref/dps_empty.json" }
+            }
+        }
+    }
+}

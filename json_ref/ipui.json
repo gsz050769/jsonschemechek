@@ -1,0 +1,9 @@
+{
+    "$id": "http://example.com/ref/ipui",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "International Portable User Identity (IPUI)" ,
+    "type": "string",
+    "maxLength": 10,
+    "minLength": 10,
+    "pattern": "^[0-9a-fA-F]*$"
+}

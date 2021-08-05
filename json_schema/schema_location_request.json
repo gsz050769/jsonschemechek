@@ -1,0 +1,67 @@
+{
+	"$id": "http://example.com/schema_location_request",
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"required": [
+		"msgId",
+		"params"
+    ],
+	"examples": [
+		{
+			"msgId": "pos_2",
+			"params":
+			{
+				"sip_id":"4020",
+				"mode":"dps"
+			}
+		},
+		{
+			"msgId": "pos_2",
+			"params":
+			{
+				"sip_id":"4020",
+				"mode":"ble"
+			}
+		},
+		{
+			"msgId": "pos_2",
+			"params":
+			{
+				"sip_id":"4020",
+				"mode":"dps+ble"
+			}
+		}
+	],
+	"properties": {
+		"msgId": { "$ref" : "file:json_ref/msgid.json"
+		},
+		"params": { 
+			"$id": "#/properties/params",
+			"type": "object",
+			"description": "Contains request message paramters",
+			"required": [
+				"mode"
+			],
+			"oneOf" : [
+				{"required" : ["sip_id"]},
+				{"required" : ["ipui"]}
+			],
+			"properties": {
+				"mode": { "$ref": "file:json_ref/location_mode.json" },
+				"ipui": { "$ref": "file:json_ref/ipui.json" },
+				"sip_id": { "$ref": "file:json_ref/sip_id.json" },
+				"ble" : {
+					"$id": "#/properties/ble",
+					"type": "object",
+					"description": "Contains ble request parameters",
+					"properties" : {
+						"company_ids": { "$ref": "file:json_ref/ble_company_ids.json"},
+						"search_timeout": { "$ref": "file:json_ref/ble_search_timeout.json"},
+						"max_beacons": { "$ref": "file:json_ref/ble_max_beacons.json"},
+						"request_info": { "$ref": "file:json_ref/ble_request_info.json"}
+					}
+				}
+			}
+		}
+	}
+}

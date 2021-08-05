@@ -1,0 +1,65 @@
+{
+    "$id": "http://example.com/general_api_status_response",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "required": [
+        "msgId",
+        "payload"
+    ],
+    "examples": [
+        {
+            "msgId": "gen_1",
+            "payload": {
+                "api": {
+                    "api_version": "AML_V_0_0"
+                },
+                "integrator": {
+                    "firmware_version": "V2.35.0 (V2.35.0-67-gc0324df)",
+                    "mac": "7c2f80c6e5b7",
+                    "product_name": "N870"
+                }
+            }
+        }
+    ],
+    "properties": {
+        "msgId": { "$ref" : "file:json_ref/msgid.json"
+        },
+        "payload": {
+            "$id": "#/properties/payload",
+            "type": "object",
+            "description": "Contains response message data",
+            "required": [
+                "api",
+                "integrator"
+            ],
+            "properties": {
+                "api": {
+                    "$id": "#/properties/payload/properties/api",
+                    "type": "object",
+                    "description": "api info",
+                    "required": [
+                        "api_version"
+                    ],
+                    "properties": {
+                        "api_version": { "$ref": "file:json_ref/api_version.json" }
+                    }
+                },
+                "integrator": {
+                    "$id": "#/properties/payload/properties/integrator",
+                    "type": "object",
+                    "description": "integrator info",
+                    "required": [
+                        "mac",
+                        "firmware_version",
+                        "product_name"
+                    ],
+                    "properties": {
+                        "mac": { "$ref": "file:json_ref/mac.json" },
+                        "firmware_version": {"$ref": "file:json_ref/firmware_version.json"},
+                        "product_name": {"$ref": "file:json_ref/product_name.json"}
+                    }
+                }
+            }
+        }
+    }
+}

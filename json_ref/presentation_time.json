@@ -1,0 +1,8 @@
+{
+    "$id": "http://example.com/ref/presentation_time",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "time hottest message is presented, timeout => terminal_msg_status=\"fullview-presentation_timeout\"" ,
+    "type": "string",
+    "maxLength": 2,
+    "pattern": "^[0-9]*$"
+}

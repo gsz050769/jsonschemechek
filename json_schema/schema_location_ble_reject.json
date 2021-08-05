@@ -1,0 +1,57 @@
+{
+    "$id": "http://example.com/location_ble_reject",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "required": [
+        "msgId",
+        "payload"
+    ],
+    "examples": [
+        {
+            "msgId": "pos_2",
+            "payload": {
+                "ipui": "02ea651bab",
+                "sip_id": "4020",
+                "dm_id": "dm1",
+                "ble": {
+                    "rej_reason": "hs_does_not_support_ble"
+                },
+                "dps": {}
+            }
+        }
+    ],
+    "properties": {
+        "msgId": { "$ref" : "file:json_ref/msgid.json"
+        },
+        "payload": {
+            "$id": "#/properties/payload",
+            "type": "object",
+            "description": "Contains reject message data",
+            "required": [
+                "ipui",
+                "sip_id",
+                "dm_id",
+                "dps",
+                "ble"
+            ],
+            "properties": {
+                "ipui": { "$ref": "file:json_ref/ipui.json" },
+                "sip_id": { "$ref": "file:json_ref/sip_id.json" },
+                "dm_id": { "$ref": "file:json_ref/dm_id.json" },
+                "ble": {
+                 
+                    "$id": "#/properties/payload/properties/dps",
+                    "type": "object",
+                    "description": "BLE content reject message",
+                    "required": [
+                        "rej_reason"
+                    ],
+                    "properties": {
+                        "rej_reason": { "$ref": "file:json_ref/location_rej_reason.json" }
+                    }
+                },
+                "dps":  {"$ref": "file:json_ref/dps_empty.json" }
+            }
+        }
+    }
+}

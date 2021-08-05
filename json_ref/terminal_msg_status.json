@@ -1,0 +1,16 @@
+{
+    "$id": "http://example.com/ref/terminal_msg_status",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "Terminals message status" ,
+    "type": "string",
+    "enum": [
+                "queued",
+                "preview",
+                "fullview",
+                "fullview_by_user_interact",
+                "fullview_presentation_timeout",
+                "local_ignore",
+                "replied",
+                "deleted"
+    ]
+}

@@ -1,0 +1,1 @@
+{"msgId":"pos_2","payload":{"ble":{"info":"BLE request in progress","status":"183"},"dm_handover":"no","dm_id":"dm1","dps":{"bases":[{"fpn":"ab","rpn":"02","rssi":"60"}],"bs_fpn":"ab","bs_mac":"7c2f80c1f40a","bs_name":"LocalBS","bs_rpn":"02","timestamp":"1620800422"},"ipui":"0355ac19e0","sip_id":"4021"}}

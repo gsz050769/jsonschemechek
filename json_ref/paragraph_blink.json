@@ -1,0 +1,10 @@
+{
+    "$id": "http://example.com/ref/paragraph_blink",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "paragraph blinking yes/no" ,
+    "type": "string",
+    "enum": [
+                "yes",
+                "no"
+    ]
+}

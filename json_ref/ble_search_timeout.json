@@ -1,0 +1,9 @@
+{
+    "$id": "http://example.com/ref/ble_search_timeout",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "max time for BLE scan procedure" ,
+    "type": "string",
+    "maxLength": 2,
+    "minLength": 1,
+    "pattern": "^[0-9]*$"
+}

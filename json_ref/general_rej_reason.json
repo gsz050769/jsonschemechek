@@ -1,0 +1,10 @@
+{
+    "$id": "http://example.com/ref/general_rej_reason",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "General reject reason " ,
+    "type": "string",
+    "enum": [
+                "no_reason",
+                "invalid_message_format"
+    ]
+}

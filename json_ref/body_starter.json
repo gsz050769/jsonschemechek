@@ -1,0 +1,7 @@
+{
+    "$id": "http://example.com/ref/body_starter",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "Starter/preview of body text, displayed message list view" ,
+    "type": "string",
+    "maxLength": 32
+}

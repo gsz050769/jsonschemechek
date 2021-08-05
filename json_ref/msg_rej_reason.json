@@ -1,0 +1,19 @@
+{
+    "$id": "http://example.com/ref/msg_rej_reason",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "Reject reason for Messaging procedure" ,
+    "type": "string",
+    "enum": [
+                "field_with_empty_value",
+                "field_with_invalid_value",
+                "incorrect_field_type",
+                "hs_does_not_support_messaging",
+                "message_does_not_exist",
+                "messaging_disabled_for_hs",
+                "messaging_service_overloaded",
+                "non_unique_sip_id",
+                "required_field_missing",
+                "unknown_error",
+                "unknown_sip_id"
+    ]
+}

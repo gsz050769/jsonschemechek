@@ -1,0 +1,9 @@
+{
+    "$id": "http://example.com/ref/ringtone_volume",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "alerting loudness in percent, if empty use handset value" ,
+    "type": "string",
+    "maxLength": 3,
+    "minLength": 0,
+    "pattern": "^[0-9a-fA-F]*$"
+}

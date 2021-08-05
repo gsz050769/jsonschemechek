@@ -1,0 +1,7 @@
+{
+    "$id": "http://example.com/ref/title_text",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "text for message title" ,
+    "type": "string",
+    "maxLength": 20
+}

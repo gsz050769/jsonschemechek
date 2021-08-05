@@ -1,0 +1,213 @@
+{
+    "$id": "http://example.com/messaging_set_message",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "required": [
+      "msgId",
+      "payload"
+    ],
+    "examples": [
+      {
+         "msgId":"as_message1",
+         "payload":
+         {
+             "amsgId":"facility_management_5",
+             "sip_id":"4021",
+             "msg":
+             {
+                 "server_msg_status":"new",
+                 "status_icon":"3c",
+                 "status_text":"Accepted",        
+                 "prio":"7",
+                 "alert_info":"msg_melody_high",
+                 "overrule_silencing":"yes",
+                 "vibration":"on",
+                 "ringtone_volume":"70",
+                 "presentation_time":"25",
+                 "local_ignore":"yes",
+                 "title":
+                 {
+                     "text":"Machine defect!"
+                 },
+                 "body_starter":"Machine defect",
+                 "body":
+                 [
+                     {
+                         "msg_icon":
+                         {
+                             "value":"34"
+                         }
+                     },
+                     {
+                         "paragraph":
+                         {
+                             "text":"Machine defect in room 225",
+                             "blink":"true",
+                             "underline":"false",
+                             "bold":"false",
+                             "align":"left"
+                         }
+                     }
+                 ],
+                 "msg_icon":
+                 {
+                     "value":"50"
+                 },
+                 "deletable":"true",
+                 "ttl":"360",
+                 "reply_options":
+                 [
+                     {
+                         "option_id":"987123787_a",
+                         "reply":
+                         {
+                             "text":"Accept"
+                         }
+                     },
+                     {
+                         "option_id":"987123787_r",
+                         "reply":
+                         {
+                             "text":"Reject"
+                         }
+                     },
+                     {
+                         "option_id":"987123787_c",
+                         "make_call":
+                         {
+                             "text":"call",
+                             "to":"+492871910",
+                             "user_interaction":"automatic"
+                         }
+                     }
+                 ]
+             }
+         }
+      }
+    ],
+    "properties": {
+      "msgId": { "$ref" : "file:json_ref/msgid.json" },
+      "payload": {
+        "$id": "#/properties/payload",
+        "type": "object",
+        "description": "Contains message set content",
+        "required": [
+          "amsgId",
+          "sip_id",
+          "msg"
+        ],
+        "properties": {
+          "amsgId": { "$ref" : "file:json_ref/amsgId.json" },
+          "sip_id": { "$ref" : "file:json_ref/sip_id.json" },
+          "msg": {
+            "$id": "#/properties/msg",
+            "type": "object",
+            "description": "Contains message data",
+            "required": [
+              "server_msg_status",
+              "prio",
+              "title",
+              "body"
+            ],
+            "properties": {
+              "server_msg_status":{ "$ref" : "file:json_ref/server_msg_status.json" },
+              "status_icon":{ "$ref" : "file:json_ref/status_icon.json" },
+              "status_text":{ "$ref" : "file:json_ref/status_text.json" },
+              "prio":{ "$ref" : "file:json_ref/prio.json" },
+              "alert_info":{ "$ref" : "file:json_ref/alert_info.json" },
+              "overrule_silencing":{ "$ref" : "file:json_ref/overrule_silencing.json" },
+              "vibration":{ "$ref" : "file:json_ref/vibration.json" },
+              "ringtone_volume":{ "$ref" : "file:json_ref/ringtone_volume.json" },
+              "presentation_time":{ "$ref" : "file:json_ref/presentation_time.json" },
+              "local_ignore":{ "$ref" : "file:json_ref/local_ignore.json" },
+              "title":{
+                "$id": "#/properties/title",
+                "type": "object",
+                "description": "title of the message",
+                "required": [
+                  "text"
+                ],
+                "properties":{
+                  "text":{ "$ref" : "file:json_ref/title_text.json" }
+                }
+              },
+              "body_starter":{ "$ref" : "file:json_ref/body_starter.json" },
+              "body":{
+                "$id": "#/properties/msgbody",
+                "type":"array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "msg_icon":{
+                      "$id": "#/properties/msg_icon",
+                      "type": "object",
+                      "description": "message icon",
+                      "properties":{
+                        "value": { "$ref" : "file:json_ref/icon_value.json" },
+                        "color": { "$ref" : "file:json_ref/icon_color.json" }
+                      }
+                    },
+                    "paragraph": {
+                      "$id": "#/properties/msg_paragraph",
+                      "type": "object",
+                      "properties":{
+                        "text": { "$ref" : "file:json_ref/paragraph_text.json" },
+                        "blink": { "$ref" : "file:json_ref/paragraph_blink.json" },
+                        "underline": { "$ref" : "file:json_ref/paragraph_underline.json" },
+                        "bold": { "$ref" : "file:json_ref/paragraph_bold.json" },
+                        "align": { "$ref" : "file:json_ref/paragraph_align.json" }
+                      }
+                    }
+                  }
+                }
+              },
+              "msg_icon":{
+                "$id": "#/properties/msg_icon",
+                "type": "object",
+                "description": "message icon used in message box",
+                "required": [
+                  "value"
+                ],
+                "properties":{
+                    "value": { "$ref" : "file:json_ref/icon_value.json" }
+                }
+              },
+              "deletable":{ "$ref" : "file:json_ref/deletable.json" },
+              "ttl":{ "$ref" : "file:json_ref/ttl.json" },
+              "reply_options":{
+                "$id": "#/properties/reply_options",
+                "type":"array",
+                "items": {
+                  "type": "object",
+                  "required" : [
+                    "option_id"
+                  ],
+                  "properties": {
+                    "option_id": { "$ref" : "file:json_ref/reply_option_id.json" },
+                    "reply": {
+                      "$id": "#/properties/reply",
+                      "type": "object",
+                      "properties": {
+                        "text": {"$ref" : "file:json_ref/reply_text.json"}
+                      }
+                    },
+                    "make_call": {
+                      "$id": "#/properties/make_call",
+                      "type": "object",
+                      "properties": {
+                         "text": { "$ref" : "file:json_ref/make_call_text.json" },
+                         "to": { "$ref" : "file:json_ref/make_call_to.json" },
+                         "user_interaction": { "$ref" : "file:json_ref/make_call_user_interaction.json" },
+                         "pref_audio": { "$ref" : "file:json_ref/make_call_pref_audio.json" },
+                         "audio_direction": { "$ref" : "file:json_ref/make_call_audio_direction.json" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

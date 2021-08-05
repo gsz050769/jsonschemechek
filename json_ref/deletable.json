@@ -1,0 +1,10 @@
+{
+    "$id": "http://example.com/ref/deletable",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "message deletable by message service or hs procedure" ,
+    "type": "string",
+    "enum": [
+                "yes",
+                "no"
+    ]
+}

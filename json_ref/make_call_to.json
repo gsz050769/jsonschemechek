@@ -1,0 +1,9 @@
+{
+    "$id": "http://example.com/ref/make_call_to",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "number the call is started to with make call reply" ,
+    "type": "string",
+    "maxLength": 32,
+    "minLength": 1,
+    "pattern": "^[0-9|+|*|#]*$"
+}

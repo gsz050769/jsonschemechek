@@ -1,0 +1,9 @@
+{
+    "$id": "http://example.com/ref/mac",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "MAC address" ,
+    "type": "string",
+    "maxLength": 12,
+    "minLength": 12,
+    "pattern": "^[0-9a-fA-F]*$"
+}

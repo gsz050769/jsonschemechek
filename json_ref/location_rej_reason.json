@@ -1,0 +1,17 @@
+{
+    "$id": "http://example.com/ref/location_rej_reason",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "Reject reason for Location procedure" ,
+    "type": "string",
+    "enum": [
+                "no_reason",
+                "rejected_by_hs",
+                "location_mode_not_supported",
+                "feature_not_activated",
+                "hs_not_reachable",
+                "hs_roamed_to_other_dm",
+                "hs_does_not_support_dps",
+                "hs_does_not_support_ble",
+                "hs_does_not_support_ble_tmp"
+    ]
+}

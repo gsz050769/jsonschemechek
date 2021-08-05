@@ -1,0 +1,9 @@
+{
+    "$id": "http://example.com/ref/status_icon",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "istatus icon value, displayed in message list view, see https://teamwork.gigaset.com/gigawiki/display/UN/AML+icons" ,
+    "type": "string",
+    "minLength": 2,
+    "maxLength": 2,
+    "pattern": "^[0-9a-fA-F]*$"
+}

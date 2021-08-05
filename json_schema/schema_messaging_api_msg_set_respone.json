@@ -1,0 +1,53 @@
+{
+  "$id": "http://example.com/messaging_response_message",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "required": [
+      "msgId",
+      "payload"
+  ],
+"examples": [
+  {
+    "msgId":"as_message1",
+    "payload":{            
+      "amsgId":"facility_management_5",          
+      "sip_id":"4020",
+      "msg":{
+          "rej_reason":{
+              "rej_reason":"required_field_missing"
+          }
+      }
+    }
+  }  
+],
+"properties": {
+  "msgId": { "$ref" : "file:json_ref/msgid.json" },
+  "payload": {
+    "$id": "#/properties/payload",
+    "type": "object",
+    "description": "Contains message response content",
+    "required": [
+      "amsgId",
+      "sip_id",
+      "msg"
+    ],
+    "properties": {
+      "amsgId": { "$ref" : "file:json_ref/amsgId.json" },
+      "sip_id": { "$ref" : "file:json_ref/sip_id.json" },
+      "msg": {
+          "$id": "#/properties/msg",
+          "type": "object",
+          "description": "Contains message data",
+          "oneOf" : [
+            {"required" : ["rej_reason"]},
+            {"required" : ["terminal_msg_status"]}
+          ],
+          "properties": {
+              "terminal_msg_status": { "$ref" : "file:json_ref/terminal_msg_status.json" },
+              "rej_reason": { "$ref" : "file:json_ref/msg_rej_reason.json" }
+          }
+      }
+    }
+  }
+}
+}

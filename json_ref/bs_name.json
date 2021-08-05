@@ -1,0 +1,8 @@
+{
+    "$id": "http://example.com/ref/bs_name",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "BS name" ,
+    "type": "string",
+    "maxLength": 32,
+    "minLength": 1
+}

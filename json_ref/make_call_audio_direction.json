@@ -1,0 +1,11 @@
+{
+    "$id": "http://example.com/ref/make_call_audio_direction",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "define audio direction for user_interactive mode automatic" ,
+    "type": "string",
+    "enum": [
+                "downlink",               
+                "duplex",
+                "uplink"
+    ]
+}

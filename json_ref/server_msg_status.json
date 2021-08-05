@@ -1,0 +1,10 @@
+{
+    "$id": "http://example.com/ref/server_msg_status",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "description": "message status given by application server, old=message is not presented anymore" ,
+    "type": "string",
+    "enum": [
+                "new",
+                "old"
+    ]
+}

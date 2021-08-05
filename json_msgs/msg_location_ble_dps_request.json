@@ -1,0 +1,1 @@
+{"msgId":"0","params":{"sip_id":"4021","mode":"dps+ble","ble":{"company_ids":["7777","2134"],"search_timeout":"20","max_beacons":"5","request_info":["public_address","random_address","advert_data","signal_strength"]}}}
