@@ -1,1 +1,1 @@
-# jsonschemechek
+# jsonschemechek for gigaset AML api
