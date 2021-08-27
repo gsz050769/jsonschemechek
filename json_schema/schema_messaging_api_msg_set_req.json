@@ -135,6 +135,7 @@
               "body":{
                 "$id": "#/properties/msgbody",
                 "type":"array",
+                "maxItems":3,
                 "items": {
                   "type": "object",
                   "properties": {
@@ -177,6 +178,7 @@
               "reply_options":{
                 "$id": "#/properties/reply_options",
                 "type":"array",
+                "maxItems":3,
                 "items": {
                   "type": "object",
                   "required" : [
