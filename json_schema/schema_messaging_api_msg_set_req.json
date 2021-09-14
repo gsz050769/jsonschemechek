@@ -178,7 +178,7 @@
               "reply_options":{
                 "$id": "#/properties/reply_options",
                 "type":"array",
-                "maxItems":3,
+                "maxItems":10,
                 "items": {
                   "type": "object",
                   "required" : [
